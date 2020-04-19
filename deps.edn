@@ -17,4 +17,6 @@
  
  :aliases
  {:db/migrate {:main-opts ["-m" "pingers.ragtime" "migrate"]}
-  :db/rollback {:main-opts ["-m" "pingers.ragtime" "rollback"]}}}
+  :db/rollback {:main-opts ["-m" "pingers.ragtime" "rollback"]}
+  
+  :ping/sacorona {:main-opts ["-m" "pingers.sacoronavirus"]}}}
