@@ -1,0 +1,20 @@
+{:up ["create table energyreading (
+          id bigint not null auto_increment,
+          timestamp datetime not null,
+          reading double unsigned,
+          constraint energyreading_pk primary key (id)
+       )"
+      
+      "create table energyreading_note (
+          id bigint not null auto_increment,
+          timestamp datetime not null,
+          reading_id bigint not null,
+          note text,
+          constraint energyreading_note_pk
+            primary key (id),
+          constraint fk_reading_id
+            foreign key (reading_id) references energyreading (id)
+       )"]
+ 
+ :down ["drop table energyreading_note"
+        "drop table energyreading"]}

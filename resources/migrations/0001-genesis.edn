@@ -1,0 +1,11 @@
+{:up ["create table sacoronavirus (
+          id bigint not null auto_increment,
+          timestamp datetime,
+          tests bigint,
+          positive bigint,
+          recoveries bigint,
+          deaths bigint,
+          constraint sacoronavirus_pk primary key (id)
+       )"]
+ 
+ :down ["drop table sacoronavirus"]}
