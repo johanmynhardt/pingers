@@ -40,6 +40,8 @@
     
     (try 
       (-> @driver (.get (:url config)))
+      (log/info "Waiting... they added a cloudflare wait page :|")
+      (Thread/sleep 7000)
       (-> js (.executeScript "window.scrollBy(0, document.body.scrollHeight)" (to-array [""])))
       (Thread/sleep 2000)
       (extract-stats-data @driver (:xpath/stats config))
